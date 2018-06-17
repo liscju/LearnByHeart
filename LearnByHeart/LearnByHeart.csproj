@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Exercise.cs" />
+    <Compile Include="UIControls\Exercise\ExerciseController.cs" />
+    <Compile Include="UIControls\Exercise\IExerciseView.cs" />
+    <Compile Include="UIControls\Main\IMainView.cs" />
+    <Compile Include="UIControls\Main\MainController.cs" />
+    <Compile Include="UIControls\Exercise\ExerciseUIControl.xaml.cs">
+      <DependentUpon>ExerciseUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Main\MainUIControl.xaml.cs">
+      <DependentUpon>MainUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="UIControls\UIControlSwitcher.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +80,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Resource Include="Resources\UIStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="UIControls\Exercise\ExerciseUIControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIControls\Main\MainUIControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -89,9 +115,37 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\SourceSansPro-Black.ttf" />
+    <Resource Include="Resources\SourceSansPro-BlackItalic.ttf" />
+    <Resource Include="Resources\SourceSansPro-Bold.ttf" />
+    <Resource Include="Resources\SourceSansPro-BoldItalic.ttf" />
+    <Resource Include="Resources\SourceSansPro-ExtraLight.ttf" />
+    <Resource Include="Resources\SourceSansPro-ExtraLightItalic.ttf" />
+    <Resource Include="Resources\SourceSansPro-Italic.ttf" />
+    <Resource Include="Resources\SourceSansPro-Light.ttf" />
+    <Resource Include="Resources\SourceSansPro-LightItalic.ttf" />
+    <Resource Include="Resources\SourceSansPro-Regular.ttf" />
+    <Resource Include="Resources\SourceSansPro-Semibold.ttf" />
+    <Resource Include="Resources\SourceSansPro-SemiboldItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Credits.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\open-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\up-curve-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

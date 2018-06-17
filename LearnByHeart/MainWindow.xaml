@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LearnByHeart"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Learn by Heart"
+        Height="450"
+        Width="600"
+        Background="White"
+        Icon="Resources/heart.png"
+        ResizeMode="NoResize"
+        HorizontalAlignment="Left">
 </Window>

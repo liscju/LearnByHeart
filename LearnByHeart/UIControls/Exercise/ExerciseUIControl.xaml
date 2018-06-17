@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="LearnByHeart.UIControls.ExerciseUIControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearnByHeart.UIControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="600"
+             KeyDown="Exercise_KeyDown">
+    <Grid Background="White">
+        <DockPanel HorizontalAlignment="Stretch" Height="83" VerticalAlignment="Top" Background="#FFE7E7E7">
+            <Button
+                x:Name="CloseExercise"
+                Height="83"
+                Width="100"
+                BorderThickness="0"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Click="CloseExercise_Click"
+                Style="{StaticResource MainMenuButton}"
+                HorizontalAlignment="Right">
+                <StackPanel>
+                    <Image Height="45" Width="60" Source="pack://application:,,,/Resources/close.png"/>
+                    <TextBlock HorizontalAlignment="Center" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" FontSize="14"><Run Text="Close"/></TextBlock>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+        <StackPanel HorizontalAlignment="Left" Height="130" Margin="5,88,0,0" VerticalAlignment="Top" Width="376" Background="WhiteSmoke">
+            <Label Content="Question" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro"/>
+            <TextBlock x:Name="QuestionContent" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="56" Width="359" FontFamily="pack://application:,,,/Resources/Fonts#Source Sans Pro" FontSize="16"></TextBlock>
+        </StackPanel>
+        <TextBox x:Name="AnswerToTry" HorizontalAlignment="Left" Height="23" Margin="5,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" KeyDown="AnswerToTry_KeyDown"/>
+        <Button  x:Name="ActionButton" Content="Check" HorizontalAlignment="Left" Margin="327,223,0,0" VerticalAlignment="Top" Width="54" Height="23" Background="White" Style="{StaticResource NoMouseOverEffectButton}">
+        </Button>
+        <StackPanel HorizontalAlignment="Left" Height="179" Margin="5,251,0,0" VerticalAlignment="Top" Width="376" Background="WhiteSmoke">
+            <Label Content="Answer" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />
+            <TextBlock x:Name="ResultContent" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="56" Width="359" FontFamily="pack://application:,,,/Resources/Fonts#Source Sans Pro" FontSize="16">
+            </TextBlock>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="342" Margin="386,88,0,0" VerticalAlignment="Top" Width="194" Background="WhiteSmoke">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Time -" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro"/>
+                <Label x:Name="ExerciseDuration" Content="00:00" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Margin="40,0,0,0" TextAlignment="Center" FontFamily="pack://application:,,,/Resources/Fonts#Source Sans Pro" FontSize="16">
+                    <Run Text="Answered "/><Run/>
+                </TextBlock>
+                <TextBlock x:Name="AnsweredCount" FontFamily="pack://application:,,,/Resources/Fonts#Source Sans Pro" FontSize="16">
+                </TextBlock>
+                <TextBlock FontFamily="pack://application:,,,/Resources/Fonts#Source Sans Pro" FontSize="16">
+                    <Run Text="/"/><Run/>
+                </TextBlock>
+                <TextBlock x:Name="AllCount" FontFamily="pack://application:,,,/Resources/Fonts#Source Sans Pro" FontSize="16">
+                </TextBlock>
+            </StackPanel>
+            <ProgressBar x:Name="ExerciseProgress" Margin="0,10,0,0" Height="5" Minimum="0" Maximum="100" Value="0" Foreground="Blue"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
