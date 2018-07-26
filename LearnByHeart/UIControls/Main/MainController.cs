@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearnByHeart.Utils;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -28,7 +29,7 @@ namespace LearnByHeart
         {
             try
             {
-                List<Question> questions = Question.Load(path);
+                List<Question> questions = QuestionLoader.Load(path);
                 if (questions.Count == 0)
                 {
                     view.ShowError("Selected exercise is empty");

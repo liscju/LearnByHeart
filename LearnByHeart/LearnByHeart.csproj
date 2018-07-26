@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="Models\Question.cs" />
     <Compile Include="UIControls\UIControlSwitcher.cs" />
+    <Compile Include="Utils\QuestionLoader.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
