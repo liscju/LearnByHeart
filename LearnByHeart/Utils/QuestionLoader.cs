@@ -27,42 +27,70 @@ namespace LearnByHeart.Utils
         /// </exception>
         public static List<Question> Load(string path)
         {
-            XmlSerializer serializer = new XmlSerializer(
-                typeof(List<Question>),
-                new XmlRootAttribute("Questions")
-            );
-            string xml;
-            try
-            {
-                xml = File.ReadAllText(path);
-            }
-            catch (Exception ex)
-            {
-                throw new IOException(
-                    string.Format("Problem with reading file: {0}", ex.Message, ex)
+            string xml = ReadAllText(path);
+            List<Question> questions = Deserialize(xml);
+
+            Question invalid = questions.Find(q => !IsValid(q));
+            if (invalid != null)
+                throw new FileFormatException(
+                    string.Format(
+                        "Question {0} does not contain all " +
+                        "needed data (content and answer)",
+                        questions.IndexOf(invalid)
+                    )
                 );
-            }
+            return questions;
+        }
+
+        /// <summary>
+        /// Deserializes list of questions from xml file content.
+        /// </summary>
+        /// <param name="xml">xml file content</param>
+        /// <returns>deserialized list of questions</returns>
+        /// <exception cref="FileFormatException">
+        ///     Thrown when xml has invalid format.
+        /// </exception>
+        private static List<Question> Deserialize(string xml)
+        {
+            List<Question> questions = null;
             try
             {
                 StringReader reader = new StringReader(xml);
-                List<Question> questions =
-                    (List<Question>)serializer.Deserialize(reader);
-                Question invalid = questions.Find(q => !IsValid(q));
-                if (invalid != null)
-                    throw new FileFormatException(
-                        string.Format(
-                            "Question {0} does not contain all " +
-                            "needed data (content and answer)",
-                            questions.IndexOf(invalid)
-                        )
-                    );
-                return questions;
+                XmlSerializer serializer = new XmlSerializer(
+                    typeof(List<Question>),
+                    new XmlRootAttribute("Questions")
+                );
+                questions = (List<Question>)serializer.Deserialize(reader);
             }
             catch (InvalidOperationException ex)
             {
                 throw new FileFormatException(
                     string.Format("File format exception: {0}", ex.Message),
                     ex
+                );
+            }
+
+            return questions;
+        }
+
+        /// <summary>
+        /// Reads file content.
+        /// </summary>
+        /// <param name="path">path to file</param>
+        /// <returns>path content</returns>
+        /// <exception cref="IOException">
+        ///     Thrown when problem with reading file
+        /// </exception>
+        private static string ReadAllText(string path)
+        {
+            try
+            {
+                return File.ReadAllText(path);
+            }
+            catch (Exception ex)
+            {
+                throw new IOException(
+                    string.Format("Problem with reading file: {0}", ex.Message, ex)
                 );
             }
         }
@@ -102,15 +130,27 @@ namespace LearnByHeart.Utils
                     )
                 );
 
-            XmlSerializer serializer = new XmlSerializer(
-                typeof(List<Question>),
-                new XmlRootAttribute("Questions")
-            );
+            Serialize(path, questions);
+        }
 
+        /// <summary>
+        /// Serializes questions to the file.
+        /// </summary>
+        /// <param name="path">path of the file</param>
+        /// <param name="questions">questions to serialize</param>
+        /// <exception cref="IOException">
+        ///     Thrown when problem with saving file.
+        /// </exception>
+        private static void Serialize(string path, List<Question> questions)
+        {
             System.IO.FileStream file = null;
             try
             {
                 file = System.IO.File.Create(path);
+                XmlSerializer serializer = new XmlSerializer(
+                    typeof(List<Question>),
+                    new XmlRootAttribute("Questions")
+                );
                 serializer.Serialize(file, questions);
                 file.Close();
             }
