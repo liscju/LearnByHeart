@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              KeyDown="Main_KeyDown"
              Style="{StaticResource WindowUserControl}">
-    <Grid Background="White">
+    <Grid Style="{StaticResource WindowGrid}">
         <DockPanel HorizontalAlignment="Stretch" Height="83" VerticalAlignment="Top" Background="#FFE7E7E7">
             <Button
                 x:Name="OpenFile"
