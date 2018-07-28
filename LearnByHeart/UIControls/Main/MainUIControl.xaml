@@ -12,10 +12,10 @@
             <Button
                 x:Name="OpenFile"
                 Click="OpenFileDialog_Click"
-                Style="{StaticResource MainMenuButton}"
+                Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Left">
                 <StackPanel>
-                    <Image Height="45" Width="60" Source="pack://application:,,,/Resources/open-file.png"/>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/open-file.png"/>
                     <TextBlock HorizontalAlignment="Center" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" FontSize="14">Open</TextBlock>
                 </StackPanel>
             </Button>
@@ -25,7 +25,7 @@
                 Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Right">
                 <StackPanel>
-                    <Image Height="45" Width="60" Source="/LearnByHeart;component/Resources/close.png"/>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="/LearnByHeart;component/Resources/close.png"/>
                     <TextBlock HorizontalAlignment="Center" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" FontSize="14"><Run Text="Close"/></TextBlock>
                 </StackPanel>
             </Button>

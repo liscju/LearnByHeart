@@ -15,7 +15,7 @@
                 Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Right">
                 <StackPanel>
-                    <Image Height="45" Width="60" Source="pack://application:,,,/Resources/close.png"/>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/close.png"/>
                     <TextBlock HorizontalAlignment="Center" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" FontSize="14"><Run Text="Close"/></TextBlock>
                 </StackPanel>
             </Button>
