@@ -16,7 +16,7 @@
                 HorizontalAlignment="Left">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/open-file.png"/>
-                    <TextBlock HorizontalAlignment="Center" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" FontSize="14">Open</TextBlock>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Open</TextBlock>
                 </StackPanel>
             </Button>
             <Button
@@ -26,7 +26,7 @@
                 HorizontalAlignment="Right">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="/LearnByHeart;component/Resources/close.png"/>
-                    <TextBlock HorizontalAlignment="Center" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" FontSize="14"><Run Text="Close"/></TextBlock>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Close</TextBlock>
                 </StackPanel>
             </Button>
         </DockPanel>
