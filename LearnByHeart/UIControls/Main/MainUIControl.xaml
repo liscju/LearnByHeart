@@ -11,12 +11,7 @@
         <DockPanel Style="{StaticResource ControlPanel}">
             <Button
                 x:Name="OpenFile"
-                Height="83"
-                Width="100"
-                BorderThickness="0"
-                Background="{x:Null}"
                 Click="OpenFileDialog_Click"
-                BorderBrush="{x:Null}"
                 Style="{StaticResource MainMenuButton}"
                 HorizontalAlignment="Left">
                 <StackPanel>
@@ -26,11 +21,6 @@
             </Button>
             <Button
                 x:Name="CloseApp"
-                Height="83"
-                Width="100"
-                BorderThickness="0"
-                Background="{x:Null}"
-                BorderBrush="{x:Null}"
                 Click="CloseApp_Click"
                 Style="{StaticResource MainMenuButton}"
                 HorizontalAlignment="Right">

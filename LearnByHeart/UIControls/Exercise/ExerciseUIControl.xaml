@@ -11,11 +11,6 @@
         <DockPanel Style="{StaticResource ControlPanel}">
             <Button
                 x:Name="CloseExercise"
-                Height="83"
-                Width="100"
-                BorderThickness="0"
-                Background="{x:Null}"
-                BorderBrush="{x:Null}"
                 Click="CloseExercise_Click"
                 Style="{StaticResource MainMenuButton}"
                 HorizontalAlignment="Right">

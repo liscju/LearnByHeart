@@ -35,6 +35,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Setter Property="Height" Value="83"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
     </Style>
     <Style TargetType="{x:Type Button}" x:Key="NoMouseOverEffectButton">
         <Setter Property="Template">
