@@ -22,7 +22,7 @@
             <Button
                 x:Name="CloseApp"
                 Click="CloseApp_Click"
-                Style="{StaticResource MainMenuButton}"
+                Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Right">
                 <StackPanel>
                     <Image Height="45" Width="60" Source="/LearnByHeart;component/Resources/close.png"/>

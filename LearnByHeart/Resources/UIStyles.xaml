@@ -13,7 +13,7 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Background" Value="#FFE7E7E7"/>
     </Style>
-    <Style TargetType="{x:Type Button}" x:Key="MainMenuButton">
+    <Style TargetType="{x:Type Button}" x:Key="ControlPanelButton">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">

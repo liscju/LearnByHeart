@@ -12,7 +12,7 @@
             <Button
                 x:Name="CloseExercise"
                 Click="CloseExercise_Click"
-                Style="{StaticResource MainMenuButton}"
+                Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Right">
                 <StackPanel>
                     <Image Height="45" Width="60" Source="pack://application:,,,/Resources/close.png"/>
