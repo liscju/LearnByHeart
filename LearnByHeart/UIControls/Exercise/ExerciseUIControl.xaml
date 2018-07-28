@@ -8,7 +8,7 @@
              KeyDown="Exercise_KeyDown"
              Style="{StaticResource WindowUserControl}">
     <Grid Style="{StaticResource WindowGrid}">
-        <DockPanel HorizontalAlignment="Stretch" Height="83" VerticalAlignment="Top" Background="#FFE7E7E7">
+        <DockPanel Style="{StaticResource ControlPanel}">
             <Button
                 x:Name="CloseExercise"
                 Height="83"
