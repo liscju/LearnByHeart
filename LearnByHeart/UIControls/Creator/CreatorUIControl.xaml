@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="LearnByHeart.UIControls.Creator.CreatorUIControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearnByHeart.UIControls.Creator"
+             mc:Ignorable="d" 
+             Style="{StaticResource WindowUserControl}">
+    <Grid Style="{StaticResource WindowGrid}">
+        <DockPanel Style="{StaticResource ControlPanel}">
+            <Button
+                x:Name="CloseCreator"
+                Click="CloseCreator_Click"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Right">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/close.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Close"/></TextBlock>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+    </Grid>
+</UserControl>

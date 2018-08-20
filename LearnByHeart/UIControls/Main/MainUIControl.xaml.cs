@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using LearnByHeart.UIControls.Creator;
+using Microsoft.Win32;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -59,6 +60,11 @@ namespace LearnByHeart.UIControls
             {
                 Application.Current.Shutdown();
             }
+        }
+
+        private void CreateFile_Click(object sender, RoutedEventArgs e)
+        {
+            UIControlSwitcher.SwitchTo(new CreatorUIControl());
         }
 
         private void Main_KeyDown(object sender, KeyEventArgs e)
