@@ -157,5 +157,15 @@
   <ItemGroup>
     <Resource Include="Resources\create-file.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\next.png" />
+    <Resource Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\save.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

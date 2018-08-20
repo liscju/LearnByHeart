@@ -9,6 +9,42 @@
     <Grid Style="{StaticResource WindowGrid}">
         <DockPanel Style="{StaticResource ControlPanel}">
             <Button
+                x:Name="PreviousQuestion"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/previous.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Previous</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="NextQuestion"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/next.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Next</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="RemoveQuestion"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/remove.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Remove</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="SaveQuestion"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/save.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Save</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
                 x:Name="CloseCreator"
                 Click="CloseCreator_Click"
                 Style="{StaticResource ControlPanelButton}"
@@ -19,5 +55,14 @@
                 </StackPanel>
             </Button>
         </DockPanel>
+        <StackPanel HorizontalAlignment="Left" Height="68" Margin="10,88,0,0" VerticalAlignment="Top" Width="580" Background="WhiteSmoke">
+            <Label Content="Question" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />
+        </StackPanel>
+        <TextBox x:Name="Question" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="580" KeyDown="AnswerToTry_KeyDown" Margin="10,161,0,0"/>
+        <StackPanel HorizontalAlignment="Left" Height="68" Margin="10,232,0,0" VerticalAlignment="Top" Width="580" Background="WhiteSmoke">
+            <Label Content="Answer" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />
+        </StackPanel>
+        <TextBox x:Name="Answer" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="580" KeyDown="AnswerToTry_KeyDown" Margin="10,305,0,0"/>
+        <Slider IsSnapToTickEnabled="True" Ticks="1" HorizontalAlignment="Left" Margin="267,406,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,-0.889"/>
     </Grid>
 </UserControl>
