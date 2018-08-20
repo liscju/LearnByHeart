@@ -10,6 +10,16 @@
     <Grid Style="{StaticResource WindowGrid}">
         <DockPanel Style="{StaticResource ControlPanel}">
             <Button
+                x:Name="CreateFile"
+                Click="CreateFile_Click"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/create-file.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Create</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
                 x:Name="OpenFile"
                 Click="OpenFileDialog_Click"
                 Style="{StaticResource ControlPanelButton}"

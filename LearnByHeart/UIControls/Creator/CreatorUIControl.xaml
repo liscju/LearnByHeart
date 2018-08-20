@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="LearnByHeart.UIControls.CreatorUIControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearnByHeart.UIControls"
+             mc:Ignorable="d" 
+             Style="{StaticResource WindowUserControl}"
+             KeyDown="UserControl_KeyDown"
+             Focusable="True">
+    <Grid Style="{StaticResource WindowGrid}">
+        <DockPanel Style="{StaticResource ControlPanel}">
+            <Button
+                x:Name="PreviousQuestion"
+                Click="PreviousQuestion_Click"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/previous.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Previous</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="NextQuestion"
+                Click="NextQuestion_Click"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/next.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Next</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="SaveQuestions"
+                Click="SaveQuestions_Click"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/save.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Save</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="SaveQuestionsAs"
+                Click="SaveQuestionsAs_Click"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/saveas.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Save As</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="CloseCreator"
+                Click="CloseCreator_Click"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Right">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/close.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Close"/></TextBlock>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Height="68" Margin="10,88,0,0" VerticalAlignment="Top" Width="570" Background="WhiteSmoke">
+            <Label Content="Question" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro"/>
+            <Label Name="Index" Content="1" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Margin="5,0,0,0" Padding="0,5,0,0"/>
+            <Label Content="/" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Padding="0,5,0,0"/>
+            <Label Name="Count" Content="1" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Padding="0,5,0,0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button
+                    x:Name="RemoveQuestion"
+                    Click="RemoveQuestion_Click"
+                    Background="Transparent"
+                    HorizontalAlignment="Right"
+                    Style="{StaticResource OperationButton}">
+                    <StackPanel>
+                        <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/remove.png"/>
+                        <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Remove"/></TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </DockPanel>
+        <TextBox x:Name="Content" KeyDown="Content_KeyDown" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="570" Margin="10,161,0,0"/>
+        <StackPanel HorizontalAlignment="Left" Height="68" Margin="10,232,0,0" VerticalAlignment="Top" Width="570" Background="WhiteSmoke">
+            <Label Content="Answer" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />
+        </StackPanel>
+        <TextBox x:Name="Answer" KeyDown="Answer_KeyDown" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="502" Margin="10,305,0,0"/>
+        <Button
+            x:Name="AddQuestion"
+            Click="AddQuestion_Click"
+            Background="Transparent"
+            HorizontalAlignment="Right"
+            Style="{StaticResource OperationButton}" Margin="0,305,23,77">
+            <StackPanel>
+                <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/add-item.png"/>
+                <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Add"/></TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>

@@ -62,6 +62,11 @@ namespace LearnByHeart.UIControls
             }
         }
 
+        private void CreateFile_Click(object sender, RoutedEventArgs e)
+        {
+            UIControlSwitcher.SwitchTo(new CreatorUIControl());
+        }
+
         private void Main_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)

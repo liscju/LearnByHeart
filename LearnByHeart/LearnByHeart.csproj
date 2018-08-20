@@ -56,6 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Exercise.cs" />
+    <Compile Include="UIControls\Creator\CreatorController.cs" />
+    <Compile Include="UIControls\Creator\CreatorUIControl.xaml.cs">
+      <DependentUpon>CreatorUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Creator\ICreatorView.cs" />
     <Compile Include="UIControls\Exercise\ExerciseController.cs" />
     <Compile Include="UIControls\Exercise\IExerciseView.cs" />
     <Compile Include="UIControls\Main\IMainView.cs" />
@@ -87,6 +92,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Resource>
+    <Page Include="UIControls\Creator\CreatorUIControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UIControls\Exercise\ExerciseUIControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +158,24 @@
   <ItemGroup>
     <Resource Include="Resources\close.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\create-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\next.png" />
+    <Resource Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add-item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\saveas.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
