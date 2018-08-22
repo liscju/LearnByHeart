@@ -36,7 +36,7 @@ namespace LearnByHeart.Utils
                     string.Format(
                         "Question {0} does not contain all " +
                         "needed data (content and answer)",
-                        questions.IndexOf(invalid)
+                        questions.IndexOf(invalid) + 1
                     )
                 );
             return questions;
@@ -124,9 +124,9 @@ namespace LearnByHeart.Utils
             if (invalid != null)
                 throw new ArgumentException(
                     String.Format(
-                        "Question '{0}' does not contain all needed data"
+                        "Question {0} does not contain all needed data"
                         + "(content and answer)"
-                        , invalid.ToString()
+                        , questions.IndexOf(invalid) + 1
                     )
                 );
 
@@ -156,9 +156,7 @@ namespace LearnByHeart.Utils
             }
             catch (Exception ex)
             {
-                throw new IOException(
-                    String.Format("Error while saving file: {0}", ex.Message)
-                );
+                throw new IOException(ex.Message);
             }
             finally
             {
