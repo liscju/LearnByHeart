@@ -17,13 +17,20 @@ namespace LearnByHeart
         public CreatorController(ICreatorView view)
         {
             this.view = view;
+        }
+
+        public void Init()
+        {
             this.currentQuestion = 0;
             this.questions = new List<Question>();
+            questions.Add(new Question("", ""));
+
+            ShowCurrentQuestion();
         }
 
         public void SaveQuestions(String path)
         {
-            view.TriggerCurrentQuestionUpdate();
+            UpdateCurrentQuestion();
 
             try
             {
@@ -31,24 +38,45 @@ namespace LearnByHeart
             }
             catch (ArgumentException ex)
             {
-                view.ShowError(ex.Message);
+                view.ShowError("Invalid question set: " + ex.Message);
             }
             catch (IOException ex)
             {
-                view.ShowError(ex.Message);
+                view.ShowError("Problem while saving question set: " + ex.Message);
             }
         }
 
-        public void UpdateCurrentQuestion(string content, string answer)
+        private void ShowCurrentQuestion()
         {
-            if (currentQuestion == questions.Count)
+            view.ShowQuestion(
+                currentQuestion + 1,
+                questions[currentQuestion],
+                questions.Count
+            );
+        }
+
+        public void UpdateCurrentQuestion()
+        {
+            questions[currentQuestion] = view.getCurrentQuestion();
+        }
+
+        public void MoveToNextQuestion()
+        {
+            UpdateCurrentQuestion();
+
+            if (!IsCurrentQuestionFilled())
             {
-                questions.Add(new Question(content, answer));
+                view.ShowError(
+                    "Fill question content and answer before moving to next question"
+                );
+                return;
             }
-            else
-            {
-                questions[currentQuestion] = new Question(content, answer);
-            }
+        }
+
+        private bool IsCurrentQuestionFilled()
+        {
+            Question current = questions[currentQuestion];
+            return current.Content.Length > 0 && current.Answer.Length > 0;
         }
     }
 }

@@ -19,6 +19,7 @@
             </Button>
             <Button
                 x:Name="NextQuestion"
+                Click="NextQuestion_Click"
                 Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Left">
                 <StackPanel>
@@ -58,11 +59,11 @@
         </DockPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="68" Margin="10,88,0,0" VerticalAlignment="Top" Width="570" Background="WhiteSmoke">
             <Label Content="Question" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro"/>
-            <Label Content="1" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Margin="5,0,0,0" Padding="0,5,0,0"/>
+            <Label Name="Index" Content="1" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Margin="5,0,0,0" Padding="0,5,0,0"/>
             <Label Content="/" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Padding="0,5,0,0"/>
-            <Label Content="1" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Padding="0,5,0,0"/>
+            <Label Name="Count" Content="1" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Padding="0,5,0,0"/>
         </StackPanel>
-        <TextBox x:Name="Question" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="570" Margin="10,161,0,0"/>
+        <TextBox x:Name="Content" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="570" Margin="10,161,0,0"/>
         <StackPanel HorizontalAlignment="Left" Height="68" Margin="10,232,0,0" VerticalAlignment="Top" Width="570" Background="WhiteSmoke">
             <Label Content="Answer" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />
         </StackPanel>

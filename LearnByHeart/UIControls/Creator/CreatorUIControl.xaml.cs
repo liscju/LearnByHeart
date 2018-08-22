@@ -15,6 +15,22 @@ namespace LearnByHeart.UIControls
         {
             InitializeComponent();
             controller = new CreatorController(this);
+
+            controller.Init();
+        }
+
+        public Question getCurrentQuestion()
+        {
+            return new Question(Content.Text, Answer.Text);
+        }
+
+        public void ShowQuestion(int idx, Question question, int count)
+        {
+            Content.Text = question.Content;
+            Answer.Text = question.Answer;
+
+            Index.Content = idx.ToString();
+            Count.Content = count.ToString();
         }
 
         public void ShowError(string message)
@@ -25,11 +41,6 @@ namespace LearnByHeart.UIControls
                 MessageBoxButton.OK,
                 MessageBoxImage.Error
             );
-        }
-
-        public void TriggerCurrentQuestionUpdate()
-        {
-            controller.UpdateCurrentQuestion(Question.Text, Answer.Text);
         }
 
         private void SaveQuestions_Click(object sender, RoutedEventArgs e)
@@ -46,5 +57,9 @@ namespace LearnByHeart.UIControls
             UIControlSwitcher.SwitchTo(new MainUIControl());
         }
 
+        private void NextQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            controller.MoveToNextQuestion();
+        }
     }
 }
