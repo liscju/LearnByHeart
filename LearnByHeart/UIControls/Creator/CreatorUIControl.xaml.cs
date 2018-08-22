@@ -1,33 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace LearnByHeart.UIControls.Creator
+namespace LearnByHeart.UIControls
 {
     /// <summary>
     /// Interaction logic for CreatorUIControl.xaml
     /// </summary>
-    public partial class CreatorUIControl : UserControl
+    public partial class CreatorUIControl : UserControl, ICreatorView
     {
+        private CreatorController controller;
+
         public CreatorUIControl()
         {
             InitializeComponent();
+            controller = new CreatorController(this);
         }
 
-        public void CloseCreator_Click(object sender, RoutedEventArgs e)
+        public void ShowError(string message)
+        {
+            MessageBox.Show(
+                message,
+                "Error",
+                MessageBoxButton.OK,
+                MessageBoxImage.Error
+            );
+        }
+
+        public void TriggerCurrentQuestionUpdate()
+        {
+            controller.UpdateCurrentQuestion(Question.Text, Answer.Text);
+        }
+
+        private void SaveQuestions_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            if (dialog.ShowDialog() != true)
+                return;
+
+            controller.SaveQuestions(dialog.FileName);
+        }
+
+        private void CloseCreator_Click(object sender, RoutedEventArgs e)
         {
             UIControlSwitcher.SwitchTo(new MainUIControl());
         }
+
     }
 }

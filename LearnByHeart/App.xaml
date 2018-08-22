@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:LearnByHeart"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="pack://application:,,,/Resources/UIStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Resources/UIStyles.xaml">
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

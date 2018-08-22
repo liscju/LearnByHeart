@@ -56,9 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Exercise.cs" />
+    <Compile Include="UIControls\Creator\CreatorController.cs" />
     <Compile Include="UIControls\Creator\CreatorUIControl.xaml.cs">
       <DependentUpon>CreatorUIControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIControls\Creator\ICreatorView.cs" />
     <Compile Include="UIControls\Exercise\ExerciseController.cs" />
     <Compile Include="UIControls\Exercise\IExerciseView.cs" />
     <Compile Include="UIControls\Main\IMainView.cs" />
