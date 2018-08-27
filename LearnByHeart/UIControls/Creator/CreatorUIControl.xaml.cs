@@ -61,5 +61,20 @@ namespace LearnByHeart.UIControls
         {
             controller.MoveToNextQuestion();
         }
+
+        private void PreviousQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            controller.MoveToPreviousQuestion();
+        }
+
+        private void RemoveQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            controller.RemoveQuestion();
+        }
+
+        private void AddQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            controller.AddNextQuestion();
+        }
     }
 }

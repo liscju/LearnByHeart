@@ -17,14 +17,36 @@ namespace LearnByHeart
         public CreatorController(ICreatorView view)
         {
             this.view = view;
+
+            currentQuestion = -1;
+            questions = new List<Question>();
         }
 
         public void Init()
         {
-            this.currentQuestion = 0;
-            this.questions = new List<Question>();
-            questions.Add(new Question("", ""));
+            AddNewEmptyQuestion();
+            ShowCurrentQuestion();
+        }
 
+        private void AddNewEmptyQuestion()
+        {
+            currentQuestion++;
+            questions.Add(new Question("", ""));
+        }
+
+        public void AddNextQuestion()
+        {
+            UpdateCurrentQuestion();
+            if (!IsCurrentQuestionFilled())
+            {
+                view.ShowError(
+                    "Fill question content and answer before moving to next " +
+                    "question or remove question"
+                );
+                return;
+            }
+
+            AddNewEmptyQuestion();
             ShowCurrentQuestion();
         }
 
@@ -62,14 +84,68 @@ namespace LearnByHeart
 
         public void MoveToNextQuestion()
         {
-            UpdateCurrentQuestion();
+            bool isLastQuestion = currentQuestion + 1 == questions.Count;
+            if (isLastQuestion)
+                return;
 
+            UpdateCurrentQuestion();
             if (!IsCurrentQuestionFilled())
             {
                 view.ShowError(
-                    "Fill question content and answer before moving to next question"
+                    "Fill question content and answer before moving to next " +
+                    "question or remove question"
                 );
                 return;
+            }
+
+            currentQuestion++;
+            ShowCurrentQuestion();
+        }
+
+        public void MoveToPreviousQuestion()
+        {
+            if (currentQuestion <= 0)
+                return;
+
+            UpdateCurrentQuestion();
+            if (!IsCurrentQuestionFilled())
+            {
+                view.ShowError(
+                    "Fill question content and answer before moving to " +
+                    "previous question or remove question"
+                );
+                return;
+            }
+
+            currentQuestion--;
+            ShowCurrentQuestion();
+        }
+
+        public void RemoveQuestion()
+        {
+            bool isLastQuestion = currentQuestion + 1 == questions.Count;
+
+            if (questions.Count == 1)
+            {
+                currentQuestion = -1;
+                questions.RemoveAt(0);
+                AddNewEmptyQuestion();
+                ShowCurrentQuestion();
+            }
+            else if (currentQuestion == 0)
+            {
+                questions.RemoveAt(0);
+                ShowCurrentQuestion();
+            }
+            else if (isLastQuestion)
+            {
+                questions.RemoveAt(currentQuestion);
+                currentQuestion--;
+                ShowCurrentQuestion();
+            }
+            else {
+                questions.RemoveAt(currentQuestion);
+                ShowCurrentQuestion();
             }
         }
 

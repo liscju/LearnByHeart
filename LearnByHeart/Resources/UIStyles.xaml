@@ -13,7 +13,7 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Background" Value="#FFE7E7E7"/>
     </Style>
-    <Style TargetType="{x:Type Button}" x:Key="ControlPanelButton">
+    <Style TargetType="{x:Type Button}" x:Key="OperationButton">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -35,11 +35,14 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Height" Value="83"/>
-        <Setter Property="Width" Value="100"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
+        
+    </Style>
+    <Style TargetType="{x:Type Button}" x:Key="ControlPanelButton" BasedOn="{StaticResource OperationButton}">
+        <Setter Property="Height" Value="83"/>
+        <Setter Property="Width" Value="100"/>
     </Style>
     <Style x:Key="ControlPanelButtonImage" TargetType="{x:Type Image}">
         <Setter Property="Height" Value="45"/>

@@ -10,6 +10,7 @@
         <DockPanel Style="{StaticResource ControlPanel}">
             <Button
                 x:Name="PreviousQuestion"
+                Click="PreviousQuestion_Click"
                 Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Left">
                 <StackPanel>
@@ -25,15 +26,6 @@
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/next.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Next</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button
-                x:Name="RemoveQuestion"
-                Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Left">
-                <StackPanel>
-                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/remove.png"/>
-                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Remove</TextBlock>
                 </StackPanel>
             </Button>
             <Button
@@ -57,17 +49,40 @@
                 </StackPanel>
             </Button>
         </DockPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="68" Margin="10,88,0,0" VerticalAlignment="Top" Width="570" Background="WhiteSmoke">
+        <DockPanel HorizontalAlignment="Left" Height="68" Margin="10,88,0,0" VerticalAlignment="Top" Width="570" Background="WhiteSmoke">
             <Label Content="Question" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro"/>
             <Label Name="Index" Content="1" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Margin="5,0,0,0" Padding="0,5,0,0"/>
             <Label Content="/" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Padding="0,5,0,0"/>
             <Label Name="Count" Content="1" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" Padding="0,5,0,0"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button
+                    x:Name="RemoveQuestion"
+                    Click="RemoveQuestion_Click"
+                    Background="Transparent"
+                    HorizontalAlignment="Right"
+                    Style="{StaticResource OperationButton}">
+                    <StackPanel>
+                        <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/remove.png"/>
+                        <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Remove"/></TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </DockPanel>
         <TextBox x:Name="Content" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="570" Margin="10,161,0,0"/>
         <StackPanel HorizontalAlignment="Left" Height="68" Margin="10,232,0,0" VerticalAlignment="Top" Width="570" Background="WhiteSmoke">
             <Label Content="Answer" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />
         </StackPanel>
-        <TextBox x:Name="Answer" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="570" Margin="10,305,0,0"/>
-        <Slider IsEnabled="True" Minimum="0" Maximum="100" TickPlacement="TopLeft" TickFrequency="1" IsSnapToTickEnabled="True" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,-0.889" Width="570"/>
+        <TextBox x:Name="Answer" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="502" Margin="10,305,0,0"/>
+        <Button
+            x:Name="AddQuestion"
+            Click="AddQuestion_Click"
+            Background="Transparent"
+            HorizontalAlignment="Right"
+            Style="{StaticResource OperationButton}" Margin="0,305,23,77">
+            <StackPanel>
+                <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/add-item.png"/>
+                <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Add"/></TextBlock>
+            </StackPanel>
+        </Button>
     </Grid>
 </UserControl>
