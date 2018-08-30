@@ -27,12 +27,12 @@
         <TextBox x:Name="AnswerToTry" HorizontalAlignment="Left" Height="23" Margin="5,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" KeyDown="AnswerToTry_KeyDown"/>
         <Button  x:Name="ActionButton" Content="Check" HorizontalAlignment="Left" Margin="327,223,0,0" VerticalAlignment="Top" Width="54" Height="23" Background="White" Style="{StaticResource NoMouseOverEffectButton}">
         </Button>
-        <StackPanel HorizontalAlignment="Left" Height="179" Margin="5,251,0,0" VerticalAlignment="Top" Width="376" Background="WhiteSmoke">
+        <StackPanel HorizontalAlignment="Left" Height="124" Margin="5,251,0,0" VerticalAlignment="Top" Width="376" Background="WhiteSmoke">
             <Label Content="Answer" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />
             <TextBlock x:Name="ResultContent" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="56" Width="359" FontFamily="pack://application:,,,/Resources/Fonts#Source Sans Pro" FontSize="16">
             </TextBlock>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="342" Margin="386,88,0,0" VerticalAlignment="Top" Width="194" Background="WhiteSmoke">
+        <StackPanel HorizontalAlignment="Left" Height="287" Margin="386,88,0,0" VerticalAlignment="Top" Width="194" Background="WhiteSmoke">
             <StackPanel Orientation="Horizontal">
                 <Label Content="Time -" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro"/>
                 <Label x:Name="ExerciseDuration" Content="00:00" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro"/>

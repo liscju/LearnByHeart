@@ -12,4 +12,20 @@
         Icon="Resources/heart.png"
         ResizeMode="NoResize"
         HorizontalAlignment="Left">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem DockPanel.Dock="Right">
+                <TextBlock Name="StatusBar">
+                </TextBlock>
+            </StatusBarItem>
+            <!--
+                Empty status bar item because default StatusBarItem container
+                DockPanel makes last item fill all the space and align to the left
+            -->
+            <StatusBarItem>
+            </StatusBarItem>
+        </StatusBar>
+        <ContentControl x:Name="MainContent">
+        </ContentControl>
+    </DockPanel>
 </Window>

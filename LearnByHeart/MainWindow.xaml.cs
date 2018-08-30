@@ -12,13 +12,14 @@ namespace LearnByHeart
         public MainWindow()
         {
             InitializeComponent();
-            Content = new MainUIControl();
+            MainContent.Content = new MainUIControl();
             UIControlSwitcher.setMainWindow(this);
+            UIStatusBar.SetMainWindow(this);
         }
 
         public void NavigateTo(UserControl control)
         {
-            Content = control;
+            MainContent.Content = control;
         }
     }
 }
