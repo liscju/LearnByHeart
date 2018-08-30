@@ -20,7 +20,8 @@ namespace LearnByHeart
         /// <summary>
         /// Navigates to exercise window.
         /// </summary>
+        /// <param name="path">path to exercise</param>
         /// <param name="questions">exercise</param>
-        void NavigateToExercise(Exercise exercise);
+        void NavigateToExercise(string path, Exercise exercise);
     }
 }

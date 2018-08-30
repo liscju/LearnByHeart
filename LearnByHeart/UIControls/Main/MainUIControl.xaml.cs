@@ -21,6 +21,7 @@ namespace LearnByHeart.UIControls
             // Focusing on control inside UserControl let KeyDown event
             // work (e.g. escape key)
             OpenFile.Focus();
+            UIWindowTitle.SetTitle();
         }
 
         public void ShowError(string message)
@@ -33,9 +34,9 @@ namespace LearnByHeart.UIControls
             );
         }
 
-        public void NavigateToExercise(Exercise exercise)
+        public void NavigateToExercise(string path, Exercise exercise)
         {
-            UIControlSwitcher.SwitchTo(new ExerciseUIControl(exercise));
+            UIControlSwitcher.SwitchTo(new ExerciseUIControl(path, exercise));
         }
 
         private void OpenFileDialog_Click(object sender, RoutedEventArgs e)

@@ -25,7 +25,7 @@ namespace LearnByHeart.UIControls
         private int durationSeconds;
         private DispatcherTimer timer;
 
-        public ExerciseUIControl(Exercise exercise)
+        public ExerciseUIControl(string path, Exercise exercise)
         {
             InitializeComponent();
             controller = new ExerciseController(exercise, this);
@@ -38,6 +38,8 @@ namespace LearnByHeart.UIControls
             timer.Tick += ExerciseDuration_Tick;
 
             timer.Start();
+
+            UIWindowTitle.SetSubtitle(path);
         }
 
         // Actions

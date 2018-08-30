@@ -35,7 +35,7 @@ namespace LearnByHeart
                     view.ShowError("Selected exercise is empty");
                     return;
                 }
-                view.NavigateToExercise(new Exercise(questions, DateTime.Now));
+                view.NavigateToExercise(path, new Exercise(questions, DateTime.Now));
             } catch (IOException ex)
             {
                 view.ShowError(ex.Message);
