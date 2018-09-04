@@ -42,6 +42,9 @@ namespace LearnByHeart.UIControls
         private void OpenFileDialog_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.AddExtension = true;
+            openFileDialog.Filter = "Question set|*.xml|Any|*.*";
+            openFileDialog.DefaultExt = "xml";
             if (openFileDialog.ShowDialog() != true)
                 return;
 
@@ -78,6 +81,8 @@ namespace LearnByHeart.UIControls
         private void EditFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.AddExtension = true;
+            openFileDialog.Filter = "Question set|*.xml|Any|*.*";
             if (openFileDialog.ShowDialog() != true)
                 return;
 

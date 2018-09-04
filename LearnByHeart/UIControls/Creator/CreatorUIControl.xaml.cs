@@ -43,6 +43,9 @@ namespace LearnByHeart.UIControls
         public string ChoosePathToSaveFile()
         {
             SaveFileDialog dialog = new SaveFileDialog();
+            dialog.AddExtension = true;
+            dialog.Filter = "Question set|*.xml|Any|*.*";
+            dialog.DefaultExt = "xml";
             if (dialog.ShowDialog() == false)
                 return null;
             return dialog.FileName;
