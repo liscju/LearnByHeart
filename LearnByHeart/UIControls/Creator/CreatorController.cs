@@ -25,9 +25,20 @@ namespace LearnByHeart
             isDataDirty = false;
         }
 
+        public CreatorController(ICreatorView view, string path, List<Question> questions) : this(view)
+        {
+            this.view = view;
+            this.filePath = path;
+
+            currentQuestion = 0;
+            this.questions = questions;
+            isDataDirty = false;
+        }
+
         public void Init()
         {
-            AddNewEmptyQuestion();
+            if (questions.Count == 0)
+                AddNewEmptyQuestion();
             ShowCurrentQuestion();
         }
 

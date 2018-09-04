@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -22,6 +23,16 @@ namespace LearnByHeart.UIControls
             controller.Init();
 
             UIWindowTitle.SetSubtitle("New ");
+        }
+
+        public CreatorUIControl(string path, List<Question> questions)
+        {
+            InitializeComponent();
+            controller = new CreatorController(this, path, questions);
+
+            controller.Init();
+
+            UIWindowTitle.SetSubtitle(path);
         }
 
         public Question GetCurrentQuestion()

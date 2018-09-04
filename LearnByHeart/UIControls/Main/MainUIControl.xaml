@@ -20,6 +20,16 @@
                 </StackPanel>
             </Button>
             <Button
+                x:Name="EditFile"
+                Click="EditFile_Click"
+                Style="{StaticResource ControlPanelButton}"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/edit-file.png"/>
+                    <TextBlock Style="{StaticResource ControlPanelButtonText}">Edit</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button
                 x:Name="OpenFile"
                 Click="OpenFileDialog_Click"
                 Style="{StaticResource ControlPanelButton}"

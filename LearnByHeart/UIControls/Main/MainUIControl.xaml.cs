@@ -74,5 +74,19 @@ namespace LearnByHeart.UIControls
                 CloseApp.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             }
         }
+
+        private void EditFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() != true)
+                return;
+
+            controller.EditFile(openFileDialog.FileName);
+        }
+
+        public void NavigateToEdit(string path, List<Question> questions)
+        {
+            UIControlSwitcher.SwitchTo(new CreatorUIControl(path, questions));
+        }
     }
 }

@@ -44,5 +44,28 @@ namespace LearnByHeart
                 view.ShowError(ex.Message);
             }
         }
+
+        public void EditFile(string path)
+        {
+            try
+            {
+                List<Question> questions = QuestionLoader.Load(path);
+                if (questions.Count == 0)
+                {
+                    view.ShowError("Selected exercise is empty");
+                    return;
+                }
+
+                view.NavigateToEdit(path, questions);
+            }
+            catch (IOException ex)
+            {
+                view.ShowError(ex.Message);
+            }
+            catch (FileFormatException ex)
+            {
+                view.ShowError(ex.Message);
+            }
+        }
     }
 }
