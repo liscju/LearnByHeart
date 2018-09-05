@@ -152,7 +152,7 @@ namespace LearnByHeart.UIControls
             controller.AddNextQuestion();
         }
 
-        private void Content_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void Content_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -166,7 +166,7 @@ namespace LearnByHeart.UIControls
             controller.UpdateCurrentQuestion();
         }
 
-        private void Answer_KeyDown(object sender, KeyEventArgs e)
+        private void Answer_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {

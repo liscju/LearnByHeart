@@ -80,11 +80,11 @@
                 </Button>
             </StackPanel>
         </DockPanel>
-        <TextBox x:Name="Content" KeyDown="Content_KeyDown" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="570" Margin="10,161,0,0"/>
+        <TextBox x:Name="Content" KeyUp="Content_KeyUp" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="570" Margin="10,161,0,0"/>
         <StackPanel HorizontalAlignment="Left" Height="68" Margin="10,232,0,0" VerticalAlignment="Top" Width="570" Background="WhiteSmoke">
             <Label Content="Answer" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />
         </StackPanel>
-        <TextBox x:Name="Answer" KeyDown="Answer_KeyDown" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="502" Margin="10,305,0,0"/>
+        <TextBox x:Name="Answer" KeyUp="Answer_KeyUp" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="502" Margin="10,305,0,0"/>
         <Button
             x:Name="AddQuestion"
             Click="AddQuestion_Click"
