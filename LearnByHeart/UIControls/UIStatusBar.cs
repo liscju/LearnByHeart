@@ -11,6 +11,8 @@ namespace LearnByHeart.UIControls
     /// </summary>
     class UIStatusBar
     {
+        public const int LONG_MESSAGE = 2000;
+
         private static MainWindow window;
         private static Timer timer;
 

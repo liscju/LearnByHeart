@@ -217,7 +217,7 @@ namespace LearnByHeart.UIControls
         public void ShowFileSavedSuccesfully(string path)
         {
             UIWindowTitle.SetSubtitle(path + " ");
-            UIStatusBar.ShowText("File saved succesfully", 2000);
+            UIStatusBar.ShowText("File saved succesfully", UIStatusBar.LONG_MESSAGE);
         }
 
         public void ShowFileIsDirty(string path)
