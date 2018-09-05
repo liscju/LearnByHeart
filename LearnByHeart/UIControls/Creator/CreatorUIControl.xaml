@@ -14,7 +14,8 @@
                 x:Name="PreviousQuestion"
                 Click="PreviousQuestion_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Left"
+                ToolTip="Go to previous question (Alt + Left)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/previous.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Previous</TextBlock>
@@ -24,7 +25,8 @@
                 x:Name="NextQuestion"
                 Click="NextQuestion_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Left"
+                ToolTip="Go to next question (Alt + Right)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/next.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Next</TextBlock>
@@ -34,7 +36,8 @@
                 x:Name="SaveQuestions"
                 Click="SaveQuestions_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Left"
+                ToolTip="Save question set (Ctrl + S)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/save.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Save</TextBlock>
@@ -44,7 +47,8 @@
                 x:Name="SaveQuestionsAs"
                 Click="SaveQuestionsAs_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Left"
+                ToolTip="Save question set as...">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/saveas.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Save As</TextBlock>
@@ -54,7 +58,8 @@
                 x:Name="CloseCreator"
                 Click="CloseCreator_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Right">
+                HorizontalAlignment="Right"
+                ToolTip="Close creator (Esc)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/close.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Close"/></TextBlock>
@@ -72,7 +77,8 @@
                     Click="RemoveQuestion_Click"
                     Background="Transparent"
                     HorizontalAlignment="Right"
-                    Style="{StaticResource OperationButton}">
+                    Style="{StaticResource OperationButton}"
+                    ToolTip="Remove question (Ctrl + D)">
                     <StackPanel>
                         <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/remove.png"/>
                         <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Remove"/></TextBlock>
@@ -90,7 +96,8 @@
             Click="AddQuestion_Click"
             Background="Transparent"
             HorizontalAlignment="Right"
-            Style="{StaticResource OperationButton}" Margin="0,305,23,77">
+            Style="{StaticResource OperationButton}" Margin="0,305,23,77"
+            ToolTip="Add next question">
             <StackPanel>
                 <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/add-item.png"/>
                 <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Add"/></TextBlock>

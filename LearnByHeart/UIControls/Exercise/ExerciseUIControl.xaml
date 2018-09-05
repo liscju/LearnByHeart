@@ -13,7 +13,8 @@
                 x:Name="CloseExercise"
                 Click="CloseExercise_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Right">
+                HorizontalAlignment="Right"
+                ToolTip="Close exercise (Esc)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/close.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}"><Run Text="Close"/></TextBlock>
@@ -25,7 +26,7 @@
             <TextBlock x:Name="QuestionContent" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="56" Width="359" FontFamily="pack://application:,,,/Resources/Fonts#Source Sans Pro" FontSize="16"></TextBlock>
         </StackPanel>
         <TextBox x:Name="AnswerToTry" HorizontalAlignment="Left" Height="23" Margin="5,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" KeyDown="AnswerToTry_KeyDown"/>
-        <Button  x:Name="ActionButton" Content="Check" HorizontalAlignment="Left" Margin="327,223,0,0" VerticalAlignment="Top" Width="54" Height="23" Background="White" Style="{StaticResource NoMouseOverEffectButton}">
+        <Button  x:Name="ActionButton" Content="Check" HorizontalAlignment="Left" Margin="327,223,0,0" VerticalAlignment="Top" Width="54" Height="23" Background="White" Style="{StaticResource NoMouseOverEffectButton}" ToolTip="Check question (Enter)">
         </Button>
         <StackPanel HorizontalAlignment="Left" Height="124" Margin="5,251,0,0" VerticalAlignment="Top" Width="376" Background="WhiteSmoke">
             <Label Content="Answer" FontSize="36" FontFamily="pack://application:,,,/Resources/#Source Sans Pro" />

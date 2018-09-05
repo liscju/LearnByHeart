@@ -13,7 +13,8 @@
                 x:Name="CreateFile"
                 Click="CreateFile_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Left"
+                ToolTip="Create new question set">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/create-file.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Create</TextBlock>
@@ -23,7 +24,8 @@
                 x:Name="EditFile"
                 Click="EditFile_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Left"
+                ToolTip="Edit existing question set">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/edit-file.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Edit</TextBlock>
@@ -33,7 +35,8 @@
                 x:Name="OpenFile"
                 Click="OpenFileDialog_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Left"
+                ToolTip="Open question set">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/open-file.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Open</TextBlock>
@@ -43,7 +46,8 @@
                 x:Name="CloseApp"
                 Click="CloseApp_Click"
                 Style="{StaticResource ControlPanelButton}"
-                HorizontalAlignment="Right">
+                HorizontalAlignment="Right"
+                ToolTip="Close (Esc)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="/LearnByHeart;component/Resources/close.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Close</TextBlock>
