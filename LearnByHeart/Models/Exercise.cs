@@ -14,6 +14,7 @@ namespace LearnByHeart
         public List<Question> Answered { get; }
         public List<Question> Unanswered { get; }
         private DateTime begin;
+        private Random random;
 
         /// <summary>
         /// Initializes exercise with specified questions.
@@ -24,6 +25,8 @@ namespace LearnByHeart
             this.Unanswered = questions;
             this.Answered = new List<Question>();
             this.begin = begin;
+
+            this.random = new Random();
         }
 
         /// <summary>
@@ -36,7 +39,8 @@ namespace LearnByHeart
         {
             if (!Unanswered.Any())
                 return null;
-            return Unanswered.First();
+            int index = random.Next(Unanswered.Count);
+            return Unanswered[index];
         }
 
         /// <summary>
