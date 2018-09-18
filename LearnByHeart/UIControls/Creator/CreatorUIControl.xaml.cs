@@ -54,13 +54,7 @@ namespace LearnByHeart.UIControls
         public void ShowQuestion(int idx, Question question, int count)
         {
             // It ensures that focus is set after window is initialized
-            Dispatcher.BeginInvoke(
-                DispatcherPriority.Input,
-                new Action(delegate () {
-                    Content.Focus();
-                    Keyboard.Focus(Content);
-                })
-            );
+            UIUserControlUtil.SetFocus(Content);
 
             Content.Text = question.Content;
             Answer.Text = question.Answer;

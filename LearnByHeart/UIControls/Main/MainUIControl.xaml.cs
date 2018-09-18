@@ -22,18 +22,7 @@ namespace LearnByHeart.UIControls
 
             // Focusing on control inside UserControl let KeyDown event
             // work (e.g. escape key)
-            SetFocusOnWindow();
-        }
-
-        private void SetFocusOnWindow()
-        {
-            Dispatcher.BeginInvoke(
-                DispatcherPriority.Input,
-                new Action(delegate () {
-                    OpenFile.Focus();
-                    Keyboard.Focus(OpenFile);
-                })
-            );
+            UIUserControlUtil.SetFocus(OpenFile);
         }
 
         public void ShowError(string message)

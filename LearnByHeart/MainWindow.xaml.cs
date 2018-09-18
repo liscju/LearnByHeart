@@ -15,6 +15,7 @@ namespace LearnByHeart
             UIControlSwitcher.setMainWindow(this);
             UIStatusBar.SetMainWindow(this);
             UIWindowTitle.SetMainWindow(this);
+            UIUserControlUtil.setMainWindow(this);
 
             MainContent.Content = new MainUIControl();
         }

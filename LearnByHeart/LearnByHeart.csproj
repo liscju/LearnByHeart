@@ -74,6 +74,7 @@
     <Compile Include="Models\Question.cs" />
     <Compile Include="UIControls\UIControlSwitcher.cs" />
     <Compile Include="UIControls\UIStatusBar.cs" />
+    <Compile Include="UIControls\UIUserControlUtil.cs" />
     <Compile Include="UIControls\UIWindowTitle.cs" />
     <Compile Include="Utils\QuestionLoader.cs" />
     <Page Include="MainWindow.xaml">
