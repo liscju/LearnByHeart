@@ -61,6 +61,16 @@ namespace LearnByHeart.UIControls
 
             Index.Content = idx.ToString();
             Count.Content = count.ToString();
+
+            if (idx == 1)
+                PreviousQuestion.Opacity = 0.1;
+            else
+                PreviousQuestion.Opacity = 1;
+
+            if (idx == count)
+                NextQuestion.Opacity = 0.1;
+            else
+                NextQuestion.Opacity = 1;
         }
 
         public void ShowError(string message)
