@@ -1,8 +1,10 @@
 ﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace LearnByHeart.UIControls
 {
@@ -20,8 +22,18 @@ namespace LearnByHeart.UIControls
 
             // Focusing on control inside UserControl let KeyDown event
             // work (e.g. escape key)
-            OpenFile.Focus();
-            UIWindowTitle.SetTitle();
+            SetFocusOnWindow();
+        }
+
+        private void SetFocusOnWindow()
+        {
+            Dispatcher.BeginInvoke(
+                DispatcherPriority.Input,
+                new Action(delegate () {
+                    OpenFile.Focus();
+                    Keyboard.Focus(OpenFile);
+                })
+            );
         }
 
         public void ShowError(string message)
@@ -75,6 +87,21 @@ namespace LearnByHeart.UIControls
             if (e.Key == Key.Escape)
             {
                 CloseApp.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            }
+            else if (e.KeyboardDevice.Modifiers == ModifierKeys.Control
+                        && e.Key == Key.N)
+            {
+                CreateFile.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            }
+            else if (e.KeyboardDevice.Modifiers == ModifierKeys.Control
+                        && e.Key == Key.E)
+            {
+                EditFile.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            }
+            else if (e.KeyboardDevice.Modifiers == ModifierKeys.Control
+                        && e.Key == Key.O)
+            {
+                OpenFile.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             }
         }
 

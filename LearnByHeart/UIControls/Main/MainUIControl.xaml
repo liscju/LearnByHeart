@@ -14,7 +14,7 @@
                 Click="CreateFile_Click"
                 Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Left"
-                ToolTip="Create new question set">
+                ToolTip="Create new question set (Ctrl + N)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/create-file.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Create</TextBlock>
@@ -25,7 +25,7 @@
                 Click="EditFile_Click"
                 Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Left"
-                ToolTip="Edit existing question set">
+                ToolTip="Edit existing question set (Ctrl + E)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/edit-file.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Edit</TextBlock>
@@ -36,7 +36,7 @@
                 Click="OpenFileDialog_Click"
                 Style="{StaticResource ControlPanelButton}"
                 HorizontalAlignment="Left"
-                ToolTip="Open question set">
+                ToolTip="Open question set (Ctrl + O)">
                 <StackPanel>
                     <Image Style="{StaticResource ControlPanelButtonImage}" Source="pack://application:,,,/Resources/open-file.png"/>
                     <TextBlock Style="{StaticResource ControlPanelButtonText}">Open</TextBlock>
